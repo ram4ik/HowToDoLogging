@@ -9,8 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            Text("Hello, world!")
+                .padding()
+        }.onAppear() {
+            Log.info("Slow network connectivity detected")
+            Log.warning("Username should not be nil")
+            Log.error("User authentication failed")
+        }
     }
 }
 
